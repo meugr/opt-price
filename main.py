@@ -117,6 +117,10 @@ try:
     get_xml_file(Config.xml_link, Config.path_xml)
     dict_price = make_dict(Config.path_xml, Config.path_urls)
     write_in_excel(dict_price, Config.path_excel)
+    try:
+        os.mkdir('backup')  # creates a directory when you first start
+    except FileExistsError:
+        print('Directory "backup" exist')
     copyfile(Config.path_excel, Config.backup_path)
 except:
     print('ERROR!!')
