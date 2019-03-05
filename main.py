@@ -9,7 +9,7 @@ from shutil import copyfile
 import smtplib
 try:
     import lxml.etree.ElementTree as etree
-except ModuleNotFoundError:
+except ImportError:
     import xml.etree.ElementTree as etree
 
 
