@@ -81,7 +81,7 @@ def write_in_excel(dict_price, excel_name, current_date):
         ws['E{}'.format(row)] = dict_price.get(art).get('flavor')
         ws['F{}'.format(row)] = dict_price.get(art).get('weight')
         ws['G{}'.format(row)] = dict_price.get(art).get('price')
-        ws['H{}'.format(row)].hyperlink = dict_price.get(art).get('url')
+        ws['H{}'.format(row)] = dict_price.get(art).get('url')
     ws['A1'] = 'Цены и наличие\nактуальны на\n{}'.format(current_date)
     for i in range(row + 1, row + 50):  # clear 50 row after last row
         for j in range(1, 9):
