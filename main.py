@@ -43,10 +43,10 @@ def make_dict(xml_name, urls_name):
         category_id = offer.find('categoryId').text
         category = categories.find('category[@id="{}"]'.format(category_id)).text
 
-        vendor = offer.find('vendor')  # maybe None
+        vendor = offer.find('vendor')  # may be None
         vendor = vendor.text if vendor is not None else 'Без бренда'
 
-        flavor = offer.find('param[@name="Вкус"]')  # maybe None
+        flavor = offer.find('param[@name="Вкус"]')  # may be None
         flavor = flavor.text if flavor is not None else 'без вкусов'
 
         url = urls.get(identificator) if identificator in urls.keys() else ''
